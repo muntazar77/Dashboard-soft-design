@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
@@ -17,7 +16,7 @@ const App: React.FC = () => {
       default:
         return (
           <div className="flex items-center justify-center h-full">
-            <div className="text-center p-8 bg-white rounded-lg shadow-md">
+            <div className="text-center p-8 bg-[#e0e5ec] rounded-xl shadow-[8px_8px_16px_#a3b1c6,-8px_-8px_16px_#ffffff]">
               <h2 className="text-2xl font-bold text-slate-700 mb-2">Page not built</h2>
               <p className="text-slate-500">The '{activeView}' page is for demonstration purposes.</p>
             </div>
@@ -27,7 +26,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-slate-50 font-sans text-slate-800 min-h-screen flex">
+    <div className="bg-[#e0e5ec] font-sans text-slate-800 min-h-screen flex">
       <Sidebar activeView={activeView} setActiveView={setActiveView} />
       <div className="flex-1 flex flex-col">
         <Header activeView={activeView} />

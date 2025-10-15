@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { Deadline, TeamMember } from '../types';
 
@@ -41,10 +40,10 @@ const deadlines: Deadline[] = [
 const AvatarStack: React.FC<{ members: TeamMember[] }> = ({ members }) => (
     <div className="flex -space-x-2">
       {members.slice(0, 3).map(member => (
-        <img key={member.id} className="inline-block h-6 w-6 rounded-full ring-2 ring-white" src={member.avatarUrl} alt={member.name} />
+        <img key={member.id} className="inline-block h-6 w-6 rounded-full ring-2 ring-[#e0e5ec] shadow-[2px_2px_4px_#a3b1c6,-2px_-2px_4px_#ffffff]" src={member.avatarUrl} alt={member.name} />
       ))}
       {members.length > 3 && (
-        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-slate-200 text-xs font-medium text-slate-600 ring-2 ring-white">
+        <div className="flex h-6 w-6 items-center justify-center rounded-full bg-[#e0e5ec] text-xs font-medium text-slate-600 ring-2 ring-[#e0e5ec] shadow-[2px_2px_4px_#a3b1c6,-2px_-2px_4px_#ffffff]">
           +{members.length - 3}
         </div>
       )}
@@ -53,7 +52,7 @@ const AvatarStack: React.FC<{ members: TeamMember[] }> = ({ members }) => (
 
 const UpcomingDeadlines: React.FC = () => {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200/50">
+    <div className="bg-[#e0e5ec] p-6 rounded-xl shadow-[8px_8px_16px_#a3b1c6,-8px_-8px_16px_#ffffff]">
       <h3 className="text-lg font-semibold text-slate-800 mb-4">Upcoming Deadlines</h3>
       <ul className="space-y-4">
         {deadlines.map(deadline => (

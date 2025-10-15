@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { ViewType } from '../App';
 
@@ -8,8 +7,8 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ activeView }) => {
   return (
-    <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 lg:px-8 flex-shrink-0">
-      <h2 className="text-xl font-semibold text-slate-800">{activeView}</h2>
+    <header className="h-16 bg-transparent flex items-center justify-between px-6 lg:px-8 flex-shrink-0">
+      <h2 className="text-xl font-semibold text-slate-600">{activeView}</h2>
       
       <div className="flex items-center space-x-4">
         <div className="relative hidden md:block">
@@ -19,18 +18,18 @@ const Header: React.FC<HeaderProps> = ({ activeView }) => {
           <input 
             type="text" 
             placeholder="Search..." 
-            className="pl-10 pr-4 py-2 w-64 text-sm bg-slate-100 border border-transparent rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+            className="pl-10 pr-4 py-2 w-64 text-sm bg-transparent rounded-lg focus:outline-none placeholder-slate-400 text-slate-700 shadow-[inset_5px_5px_10px_#a3b1c6,inset_-5px_-5px_10px_#ffffff]"
           />
         </div>
 
-        <button className="p-2 rounded-full hover:bg-slate-100 text-slate-500">
+        <button className="p-2 rounded-full text-slate-500 transition-all duration-300 shadow-[5px_5px_10px_#a3b1c6,-5px_-5px_10px_#ffffff] active:shadow-[inset_5px_5px_10px_#a3b1c6,inset_-5px_-5px_10px_#ffffff]">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
           </svg>
         </button>
 
-        <div className="flex items-center space-x-2">
-            <img src="https://picsum.photos/seed/admin/40/40" alt="Admin" className="w-9 h-9 rounded-full"/>
+        <div className="flex items-center space-x-3">
+            <img src="https://picsum.photos/seed/admin/40/40" alt="Admin" className="w-9 h-9 rounded-full p-0.5 bg-[#e0e5ec] shadow-[3px_3px_6px_#a3b1c6,-3px_-3px_6px_#ffffff]"/>
             <div className="hidden sm:block">
                 <div className="text-sm font-semibold text-slate-800">Elena Morgan</div>
                 <div className="text-xs text-slate-500">Admin</div>

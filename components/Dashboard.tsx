@@ -1,4 +1,3 @@
-
 import React from 'react';
 import StatCard from './StatCard';
 import ProjectStatusChart from './ProjectStatusChart';
@@ -30,7 +29,6 @@ const Dashboard: React.FC = () => {
                     change="+2.5%" 
                     changeType="increase"
                     icon={<CurrencyIcon />} 
-                    iconBgColor="bg-green-100" 
                     iconTextColor="text-green-600" 
                 />
                 <StatCard 
@@ -39,7 +37,6 @@ const Dashboard: React.FC = () => {
                     change="-1.2%" 
                     changeType="decrease"
                     icon={<FolderIcon className="w-6 h-6"/>} 
-                    iconBgColor="bg-blue-100" 
                     iconTextColor="text-blue-600" 
                 />
                 <StatCard 
@@ -48,7 +45,6 @@ const Dashboard: React.FC = () => {
                     change="+5" 
                     changeType="increase"
                     icon={<UsersIcon className="w-6 h-6"/>} 
-                    iconBgColor="bg-indigo-100" 
                     iconTextColor="text-indigo-600" 
                 />
                 <StatCard 
@@ -57,7 +53,6 @@ const Dashboard: React.FC = () => {
                     change="+1" 
                     changeType="increase"
                     icon={<CheckCircleIcon />} 
-                    iconBgColor="bg-emerald-100" 
                     iconTextColor="text-emerald-600" 
                 />
             </div>

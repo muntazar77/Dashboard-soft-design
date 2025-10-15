@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
@@ -15,7 +14,7 @@ const data = [
 const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-white p-2 border border-slate-200 rounded-md shadow-sm">
+        <div className="bg-[#e0e5ec] p-2 rounded-lg shadow-[5px_5px_10px_#a3b1c6,-5px_-5px_10px_#ffffff]">
           <p className="label font-semibold text-sm text-slate-700">{label}</p>
           <p className="intro text-sm text-indigo-500">{`Revenue : $${payload[0].value}`}</p>
         </div>
@@ -27,7 +26,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 const RevenueChart: React.FC = () => {
   return (
-    <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200/50">
+    <div className="bg-[#e0e5ec] p-6 rounded-xl shadow-[8px_8px_16px_#a3b1c6,-8px_-8px_16px_#ffffff]">
       <h3 className="text-lg font-semibold text-slate-800 mb-4">Revenue Overview</h3>
       <div style={{ width: '100%', height: 300 }}>
         <ResponsiveContainer>
@@ -40,11 +39,11 @@ const RevenueChart: React.FC = () => {
               bottom: 5,
             }}
           >
-            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e2e8f0" />
+            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(163, 177, 198, 0.3)" />
             <XAxis dataKey="name" tick={{ fill: '#64748b', fontSize: 12 }} axisLine={false} tickLine={false} />
             <YAxis tick={{ fill: '#64748b', fontSize: 12 }} axisLine={false} tickLine={false} tickFormatter={(value) => `$${value / 1000}k`} />
-            <Tooltip cursor={{fill: 'rgba(239, 246, 255, 0.5)'}} content={<CustomTooltip />} />
-            <Bar dataKey="revenue" fill="#4f46e5" radius={[4, 4, 0, 0]} />
+            <Tooltip cursor={{fill: 'rgba(136, 168, 245, 0.2)'}} content={<CustomTooltip />} />
+            <Bar dataKey="revenue" fill="#88A8F5" radius={[4, 4, 0, 0]} />
           </BarChart>
         </ResponsiveContainer>
       </div>

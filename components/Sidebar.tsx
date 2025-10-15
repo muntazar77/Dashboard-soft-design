@@ -1,4 +1,3 @@
-
 import React from 'react';
 import type { ViewType } from '../App';
 import { ChartBarIcon, FolderIcon, UsersIcon, DocumentChartBarIcon, Cog6ToothIcon } from '../constants';
@@ -14,6 +13,10 @@ const NavItem: React.FC<{
   isActive: boolean;
   onClick: () => void;
 }> = ({ icon, label, isActive, onClick }) => {
+  const baseClasses = "flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-all duration-300";
+  const activeClasses = "shadow-[inset_5px_5px_10px_#a3b1c6,inset_-5px_-5px_10px_#ffffff] text-indigo-500";
+  const inactiveClasses = "text-slate-500 shadow-[5px_5px_10px_#a3b1c6,-5px_-5px_10px_#ffffff] hover:text-indigo-500 active:shadow-[inset_5px_5px_10px_#a3b1c6,inset_-5px_-5px_10px_#ffffff]";
+
   return (
     <a
       href="#"
@@ -21,11 +24,7 @@ const NavItem: React.FC<{
         e.preventDefault();
         onClick();
       }}
-      className={`flex items-center px-4 py-3 text-sm font-medium rounded-lg transition-colors duration-200 ${
-        isActive
-          ? 'bg-indigo-600 text-white shadow-lg'
-          : 'text-slate-500 hover:bg-slate-100 hover:text-slate-800'
-      }`}
+      className={`${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
     >
       {icon}
       <span className="ml-3">{label}</span>
@@ -43,11 +42,11 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, setActiveView }) => {
   ];
 
   return (
-    <aside className="w-64 flex-shrink-0 bg-white border-r border-slate-200 flex flex-col">
-      <div className="h-16 flex items-center px-6 border-b border-slate-200">
-        <h1 className="text-xl font-bold text-indigo-600">SoftDash</h1>
+    <aside className="w-64 flex-shrink-0 bg-[#e0e5ec] flex flex-col">
+      <div className="h-16 flex items-center px-6">
+        <h1 className="text-xl font-bold text-slate-700 tracking-wider">SoftDash</h1>
       </div>
-      <nav className="flex-1 px-4 py-6 space-y-2">
+      <nav className="flex-1 px-4 py-6 space-y-3">
         {navItems.map((item) => (
           <NavItem
             key={item.label}
@@ -58,7 +57,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeView, setActiveView }) => {
           />
         ))}
       </nav>
-      <div className="px-4 py-6 border-t border-slate-200">
+      <div className="px-4 py-6">
         <NavItem
           icon={<Cog6ToothIcon className="w-5 h-5" />}
           label="Settings"
